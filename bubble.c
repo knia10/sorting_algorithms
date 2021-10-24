@@ -6,9 +6,10 @@
  * @min: search the min number
  */
 
-void bubble(int *max, int *min)
+int bubble(int *max, int *min)
 {
 	int temp = *max;
 	*max = *min;
 	*min = temp;
+	return(max, min);
 }
