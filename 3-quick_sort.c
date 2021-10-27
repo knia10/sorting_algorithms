@@ -1,10 +1,10 @@
-include "sort.h"
+#include "sort.h"
 
 /**
- * bubble - Function that swap two elemts.
- * @max: Search the max number.
- * @min: Search the min number.
- */
+* bubble - Function that swap two elemts.
+* @max: Search the max number.
+* @min: Search the min number.
+*/
 
 void bubble(int *max, int *min)
 {
@@ -14,15 +14,15 @@ void bubble(int *max, int *min)
 }
 
 /**
- * partition - This function is
- * the one that actually sorts
- * the array and exchanges values.
- * @array: Array of integers.
- * @left: Firts position.
- * @right: Last position.
- * @size: Size of array.
- * Return: Index in left.
- */
+* partition - This function is
+* the one that actually sorts
+* the array and exchanges values.
+* @array: Array of integers.
+* @left: Firts position.
+* @right: Last position.
+* @size: Size of array.
+* Return: Index in left.
+*/
 
 int partition(int *array, int left, int right, int size)
 {
@@ -49,13 +49,13 @@ int partition(int *array, int left, int right, int size)
 	return (i + 1);
 }
 /**
- * divide_conquer - Order with recursion.
- * @array: Array of integer.
- * @left: First position.
- * @right: Last position.
- * @size: Size of array.
- * Return: Nothing.
- */
+* divide_conquer - Order with recursion.
+* @array: Array of integer.
+* @left: First position.
+* @right: Last position.
+* @size: Size of array.
+* Return: Nothing.
+*/
 
 void divide_conquer(int array[], int left, int right, size_t size)
 {
@@ -70,12 +70,12 @@ void divide_conquer(int array[], int left, int right, size_t size)
 }
 
 /**
- * quick_sort - Sorts an array of int in
- * ascending order with Quick sort algorithm.
- * @array: Array to sort.
- * @size: Size to array.
- * Return: Nothing.
- */
+* quick_sort - Sorts an array of int in
+* ascending order with Quick sort algorithm.
+* @array: Array to sort.
+* @size: Size to array.
+* Return: Nothing.
+*/
 
 void quick_sort(int *array, size_t size)
 {
