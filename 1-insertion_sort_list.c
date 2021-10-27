@@ -2,16 +2,28 @@
 
 /**
  * bubble - function that swap two elemts
- * @max: search the max number
- * @min: search the min number
+ * @head: search the max number
+ * @front: first element
+ * @back: second element
+ * Return: Nothing.
  */
 
-void bubble(listint_t *max, listint_t *min)
+void bubble(listint_t **head, listint_t **front, listint_t *back)
 {
-	int temp = max->n;
+	(*front)->next = back->next;
 
-	max->n = min->n;
-	min->n = temp;
+	if (back->next != NULL)
+		back->next->prev = (*front);
+	back->prev = (*front)->prev;
+	back->next = (*front);
+
+	if ((*front)->prev)
+		(*front)->prev->next = back;
+	else
+		*head = back;
+
+	(*front)->prev = back;
+	(*front) = back->prev;
 }
 
 /**
@@ -25,19 +37,22 @@ void bubble(listint_t *max, listint_t *min)
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *p_front = *list->head;
-	listint_t *p_back = NULL;
+	listint_t *temp = NULL;
+	listint_t *apt_index = NULL;
+	listint_t *apt_add = NULL;
 
-	while (p_front != NULL)
+	if (*list == NULL)
+		return;
+
+	for (apt_index = (*list)->next; apt_index != NULL; apt_index = temp)
 	{
-		p_back = p_front->next;
-		while (p_back != NULL &&
-			   p_back->prev != NULL &&
-			   p_back->n < p_back->prev->n)
+		temp = apt_index->next;
+		apt_add = apt_index->prev;
+
+		while (apt_add != NULL && (apt_index->n < apt_add->n))
 		{
-			bubble(p_back, p_back->prev);
-			p_back = p_back->prev;
+			bubble(list, &apt_add, apt_index);
+			print_list(*list);
 		}
-		p_front = p_front->next;
 	}
 }
