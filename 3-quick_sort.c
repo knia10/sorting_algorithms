@@ -1,4 +1,4 @@
-#include "sort.h"
+include "sort.h"
 
 /**
  * bubble - Function that swap two elemts.
@@ -31,7 +31,7 @@ int partition(int *array, int left, int right, int size)
 
 	for (j = left; j <= right - 1; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			i++;
 			if (i != j)
