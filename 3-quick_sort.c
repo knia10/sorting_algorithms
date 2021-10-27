@@ -63,7 +63,6 @@ int partition(int *array, int left, int right, int size)
 	}
 	return (i + 1);
 }
-
 /**
  * divide_conquer - Order with recursion.
  * @array: Array of integer.
