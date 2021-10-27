@@ -26,10 +26,10 @@ void bubble(int *max, int *min)
 
 int partition(int *arr, int left, int right, int size)
 {
-	int pivot = arr[r];
-	int i = l - 1, j;
+	int pivot = arr[right];
+	int i = left - 1, j;
 
-	for (j = l; j <= r - 1; j++)
+	for (j = left; j <= right - 1; j++)
 	{
 		if (arr[j] < pivot)
 		{
@@ -41,7 +41,7 @@ int partition(int *arr, int left, int right, int size)
 			}
 		}
 	}
-	if (i + 1 != r)
+	if (i + 1 != right)
 	{
 		bubble(&arr[i + 1], &arr[j]);
 		print_array(arr, size);
