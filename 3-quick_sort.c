@@ -27,22 +27,24 @@ void bubble(int *max, int *min)
 int partition(int *arr, int left, int right, int size)
 {
 	/* int pivot = arr[right]; */
-	int i = left - 1, j;
+	int i = 0;
 
-	for (j = left; j <= right - 1; j++)
+	/* for (j = left; j <= right - 1; j++) */
+	for (i = left - 1; left <= right - 1; left++)
 	{
 		/* if (arr[j] < pivot) */
-		if (arr[j] < arr[right])
+		if (arr[left] < arr[right])
 		{
 			i++;
-			if (i != j)
+			if (i != left)
 			{
-				bubble(&arr[i], &arr[j]);
+				bubble(&arr[i], &arr[left]);
 				print_array(arr, size);
 			}
 		}
 	}
-	if (i + 1 != right)
+	/*if (i + 1 != right)*/
+	if (arr[i + 1] > arr[right])
 	{
 		bubble(&arr[i + 1], &arr[right]);
 		print_array(arr, size);
