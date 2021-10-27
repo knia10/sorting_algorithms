@@ -43,7 +43,6 @@ int partition(int *arr, int left, int right, int size)
 	}
 	if (i + 1 != right)
 	{
-		// bubble(&arr[i + 1], &arr[j]);
 		bubble(&arr[i + 1], &arr[right]);
 		print_array(arr, size);
 	}
