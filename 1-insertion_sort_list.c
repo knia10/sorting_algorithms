@@ -41,7 +41,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *apt_index = NULL;
 	listint_t *apt_add = NULL;
 
-	if (*list == NULL)
+	if (list == NULL)
 		return;
 
 	for (apt_index = (*list)->next; apt_index != NULL; apt_index = temp)
