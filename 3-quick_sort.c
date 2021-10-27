@@ -12,41 +12,44 @@ void bubble(int *max, int *min)
 	*max = *min;
 	*min = temp;
 }
+
 /**
  * partition - This function is
  * the one that actually sorts
  * the array and exchanges values.
- * @array: Array of integers.
+ * @arr: Array of integers.
  * @left: Firts position.
  * @right: Last position.
  * @size: Size of array.
  * Return: Index in left.
  */
 
-int partition(int *array, int left, int right, int size)
+int partition(int *arr, int left, int right, int size)
 {
-	int pivot = array[right];
+	int pivot = arr[right];
 	int i = left - 1, j;
 
 	for (j = left; j <= right - 1; j++)
 	{
-		if (array[j] < pivot)
+		if (arr[j] < pivot)
 		{
 			i++;
 			if (i != j)
 			{
-				bubble(&array[i], &array[j]);
-				print_array(array, size);
+				bubble(&arr[i], &arr[j]);
+				print_array(arr, size);
 			}
 		}
 	}
 	if (i + 1 != right)
 	{
-		bubble(&array[i + 1], &array[j]);
-		print_array(array, size);
+		// bubble(&arr[i + 1], &arr[j]);
+		bubble(&arr[i + 1], &arr[right]);
+		print_array(arr, size);
 	}
 	return (i + 1);
 }
+
 /**
  * divide_conquer - Order with recursion.
  * @array: Array of integer.
@@ -78,7 +81,7 @@ void divide_conquer(int array[], int left, int right, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL || size == 0)
+	if (array == NULL || size < 2)
 		return;
 	divide_conquer(array, 0, size - 1, size);
 }
