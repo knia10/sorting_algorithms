@@ -12,6 +12,7 @@ void bubble(int *max, int *min)
 	*max = *min;
 	*min = temp;
 }
+
 /**
  * partition - This function is
  * the one that actually sorts
@@ -30,7 +31,7 @@ int partition(int *array, int left, int right, int size)
 
 	for (j = left; j <= right - 1; j++)
 	{
-		if (array[j] < pivot)
+		if (array[j] <= pivot)
 		{
 			i++;
 			if (i != j)
@@ -42,7 +43,7 @@ int partition(int *array, int left, int right, int size)
 	}
 	if (i + 1 != right)
 	{
-		bubble(&array[i + 1], &array[j]);
+		bubble(&array[i + 1], &array[right]);
 		print_array(array, size);
 	}
 	return (i + 1);
