@@ -12,22 +12,6 @@ void bubble(int *max, int *min)
 	*max = *min;
 	*min = temp;
 }
-
-/**
- * quick_sort - Sorts an array of int in
- * ascending order with Quick sort algorithm.
- * @array: Array to sort.
- * @size: Size to array.
- * Return: Nothing.
- */
-
-void quick_sort(int *array, size_t size)
-{
-	if (array == NULL || size < 2)
-		return;
-	divide_conquer(array, 0, size - 1, size);
-}
-
 /**
  * partition - This function is
  * the one that actually sorts
